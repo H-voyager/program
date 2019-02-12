@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{050B1F98-E5EF-4A23-B392-5FA24965FFCC}</ProjectGuid>
+    <ProjectGuid>{AFE70DA2-AD11-4D95-A847-BEE503270E73}</ProjectGuid>
     <RootNamespace>My0127</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -64,7 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="work.c" />
+    <ClCompile Include="address.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
