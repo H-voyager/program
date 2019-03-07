@@ -1,29 +1,29 @@
 ////打印100-200之间的素数
-#include <stdio.h>
-#include <stdlib.h>
-int is(int x){
-	int num = 2;
-	while (num < x){
-		if (x % num == 0){
-			return 0;//说明不是素数
-		}
-		num = num + 1;
-	}
-	return 1;
-
-}
-
-int main(){
-	int i = 100;
-	while (i < 201){
-		if (is(i) == 1){
-			printf("%d\n", i);
-		}
-		i += 1;
-	}
-	system("pause");
-	return 0;
-}
+//#include <stdio.h>
+//#include <stdlib.h>
+//int is(int x){
+//	int num = 2;
+//	while (num < x){
+//		if (x % num == 0){
+//			return 0;//说明不是素数
+//		}
+//		num = num + 1;
+//	}
+//	return 1;
+//
+//}
+//
+//int main(){
+//	int i = 100;
+//	while (i < 201){
+//		if (is(i) == 1){
+//			printf("%d\n", i);
+//		}
+//		i += 1;
+//	}
+//	system("pause");
+//	return 0;
+//}
 ////打印乘法表
 //#include <stdio.h>
 //#include <stdlib.h>
@@ -191,6 +191,6 @@ int main(){
 	//		break;
 	//	}
 	//}
-    system("pause");
-	return 0;
-}
+//    system("pause");
+//	return 0;
+//}
