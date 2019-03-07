@@ -1,6 +1,6 @@
 //#define _crt_secure_no_warnings
-#include <stdio.h>
-#include <stdlib.h>;
+//#include <stdio.h>
+//#include <stdlib.h>
 //
 //int main(){
 //	int num1 = 0;
@@ -112,27 +112,43 @@
 //}
 //////////////////////////////////////
 
-int IsPrime(int x){
-	int num = 2;
-	while (num < x){
-		if (x % num == 0){
-			return 0;//说明不是素数
-		}
-		num = num + 1;
-	}
-	return 1;
-
-}
-
+//int IsPrime(int x){
+//	int num = 2;
+//	while (num < x){
+//		if (x % num == 0){
+//			return 0;//说明不是素数
+//		}
+//		num = num + 1;
+//	}
+//	return 1;
+//
+//}
+//
+//int main(){
+//	int i = 1;
+	//while (i < 100)
+//	{
+//		if (IsPrime(i) == 1){
+//			printf("%d\n", i);
+//		}
+//		i += 1;
+//	}
+//	system("pause");
+//	return 0;
+//}
+//输入大小写字母对应输出相反的字母
+#include <stdio.h>
+#include <stdlib.h>
 int main(){
-	int i = 1;
-	while (i < 100)
-	{
-		if (IsPrime(i) == 1){
-			printf("%d\n", i);
+	int ch = 0;
+	while ((ch == getchar( ) != EOF){
+		if (ch >= 'A' && ch <= 'Z'){
+			putchar (ch + 32);
 		}
-		i += 1;
+		else if
 	}
+
 	system("pause");
-	return 0;
+	return  0;
 }
+
