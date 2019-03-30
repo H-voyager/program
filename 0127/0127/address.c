@@ -170,9 +170,15 @@ void findpersoninfo(addressbook* addr_book){
 	}
 	printf("查找成功!\n");
 }
-
+void swap(int *a, int *b) {
+	int t = *a;
+	*a = *b;
+	*b = t;
+}
 void sortpersoninfo(addressbook* addr_book){
 	assert(addr_book != NULL);
+
+
 
 
 
@@ -189,7 +195,7 @@ void printfallpersoninfo(addressbook* addr_book){
 }
 
 void clearpersoninfo(addressbook* addr_book){
-	atexit(addr_book != NULL);
+	assert (addr_book != NULL);
 	printf("清空所有元素!\n");
 	printf("确认请输入: Y \n");
 	char input[1024] = { 0 };
