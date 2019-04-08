@@ -18,5 +18,8 @@
     <ClInclude Include="Slist链表.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="CopyRandomList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
