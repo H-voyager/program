@@ -76,6 +76,3 @@ void SListPushBack(Node** ppFirst, int v)
 	//让原来的最后一个节点的 next = 新的节点;
 	cur->next = node;
 }
-
-
-

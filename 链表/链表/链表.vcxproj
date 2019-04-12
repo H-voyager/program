@@ -66,6 +66,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CopyRandomList.h" />
+    <ClInclude Include="queue.h" />
     <ClInclude Include="Slist链表.h" />
   </ItemGroup>
   <ItemGroup>
