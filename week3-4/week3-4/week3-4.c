@@ -65,7 +65,7 @@ int main( ){
 	int sum = 0;
 	int i;
 	int temp = 0;
-	scanf_s("%d %d", &num ,&n);
+	scanf_s("%d ,%d", &num ,&n);
 	for (i = 1; i <= n; i++)
 	{
 		temp = temp * 10 + num;
@@ -130,20 +130,3 @@ void reverse(int* arr, int size)
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-q2222222222222222222222222222222222222222223
