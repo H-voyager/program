@@ -3,12 +3,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//定义节点
 typedef struct Node
 {
 	int value;
 	struct Node* next;
 }Node;
 
+//定义
 typedef struct
 {
 	Node* head; //front
