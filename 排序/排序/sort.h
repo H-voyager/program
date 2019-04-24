@@ -223,7 +223,7 @@ void HeapSort(int array[], int size)
 }
 
 
-	
+
 void Test()
 {
 	int array[] = {9,8,7,6,5,4,3,3,1};
