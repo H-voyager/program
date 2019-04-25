@@ -175,14 +175,22 @@ void swap(int *a, int *b) {
 	*a = *b;
 	*b = t;
 }
-void sortpersoninfo(addressbook* addr_book){
+void sortpersoninfo(addressbook* addr_book)
+{
 	assert(addr_book != NULL);
-
-
-
-
-
-
+	for (int i = 0; i < addr_book->size; i++)
+	{
+		for (int j = 0; j < addr_book->size - 1 - i; j++)
+		{
+			personinfo *p = addr_book->person_infos;
+			
+			if (strcmp(p[j].name, p[j + 1].name < 0))
+			{
+				p[j] = p[j + 1];
+			}
+		}
+		printf("排序完毕");
+	}
 }
 
 void printfallpersoninfo(addressbook* addr_book){
@@ -225,7 +233,7 @@ int main(){
 		int choice = menu();
 		if (choice < 0 || choice > choice > sizeof(func_table) / sizeof (func_table[0])) {
 			printf("您的输入非法! 请重新输入!\n");
-			continue;
+			break;
 		}
 		if (choice == 0){
 			printf("GOODBYE!\n");
