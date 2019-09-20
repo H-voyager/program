@@ -121,7 +121,9 @@
     <ClInclude Include="AVLTree.h" />
     <ClInclude Include="BSTree.h" />
     <ClInclude Include="map.h" />
+    <ClInclude Include="memory.h" />
     <ClInclude Include="point.h" />
+    <ClInclude Include="RBTree.h" />
     <ClInclude Include="Seqlist.h" />
     <ClInclude Include="sharedptr.h" />
     <ClInclude Include="string.h" />
