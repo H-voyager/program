@@ -33,13 +33,14 @@ void SeqlistInit(Seqlist *ps, int capacity)
 {
 	//ps: 期望是变量的地址
 	assert(ps != NULL);
-	if (ps !=NULL)
+	if (ps != NULL)
 	{
-		ps->array = malloc(sizeof (int)* capacity);
+		ps->array = malloc(sizeof(int)* capacity);
 		assert(ps->array != NULL);
-			ps->size = 0;
-			ps->capacity = capacity;
+		ps->size = 0;
+		ps->capacity = capacity;
 	}
+
 }
 
 void SeqlistDestory(Seqlist *ps)
