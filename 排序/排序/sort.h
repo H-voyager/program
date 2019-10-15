@@ -236,7 +236,7 @@ void Test()
 	//InsertSort2(array, size);
 	//ShellSort(array, size);
 	//SelectSort(array, size);
-	HeapSort(array, size);
+	//HeapSort(array, size);
 	PrintArray(array, size);
 	system("pause");
 }
