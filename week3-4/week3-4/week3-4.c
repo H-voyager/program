@@ -97,27 +97,7 @@ int Game(
 
 
 }
-实现一个函数打印乘法口诀
-void printmulit(int n)
-{
-	for (int row= 1;  row <= n;  row++)
-	{
-		for (int col = 1; col <= row; col++)
-		{
-			printf("%d * %d = %d ", col, row, col *row);
-		}
-		printf("\n");
-	}
-}
 
-int main() {
-	int i;
-	scanf("%d", &i);
-	printmulit( i );
-
-	system("pause");
-	return 0;
-}
 
 //实现数组的初始化与清空和
 void Init()
