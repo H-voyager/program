@@ -1090,8 +1090,320 @@ public:
 
 };
 
+void Swap(int array[], int i, int j) {
+	int t = array[i];
+	array[i] = array[j];
+	array[j] = t;
+}
+
+//1.冒泡排序
+//时间复杂度 ： 最好O（n），平均O（n^2）,最坏O（n^2）空间复杂度: O(1) 稳定性: 稳定
+void BubbleSor(int array[],int  size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size -1 - i; j++)
+		{
+			int is_sorted = 1;
+			if (array[j] > array[j + 1])
+			{
+				int t = array[j];
+				array[j] = array[j + 1];
+				array[j + 1] = t;
+				is_sorted = 0;
+			}
+			if (is_sorted == 1)
+			{
+				break;
+			}
+		}
+	}
+}
+//2.选择排序
+// 1. 直接选择
+/*
+时间复杂度:	数据不敏感		O(n^2)
+空间复杂度: O(1)
+稳定性: 不稳定
+*/
+void selectsort(int array[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		int maxIdx = 0;
+		//有序区间[n - i, size - 1]
+		//无序区间[0,n - 1 - i]
+		for (int j = 0; j <= n - i - 1; j++)
+		{
+			if (array[j] >= array [maxIdx])
+			{
+				maxIdx = j;
+			}
+		}
+		// maxIdx 记录着无序区间部分最大的数的下标
+		// 和无序区间的最后一个位置的数进行交换
+		Swap(array, maxIdx, n - 1 - i);
+	}
+}
+void selectSortop(int array[], int n)
+{
+	int begin = 0;
+	int end = n - 1;
+	while (begin < end)
+	{
+		int min = begin;
+		int max = begin;
+		for (int i = begin; i <= end; i++)
+		{
+			if (array[i] > array[max])
+			{
+				max = i;
+			}
+			if (array[i] < array[min])
+			{
+				min = i;
+			}
+		}
+		Swap(array, min, begin);
+		if (max == begin)
+		{
+			max == min;
+		}
+		Swap(array, max, end);
+
+		begin++;
+		end--;
+	}
+}
+
+//3.插入排序
+/*
+时间复杂度:
+最好		O(n）			有序
+平均		O(n^2)
+最坏		O(n^2)			逆序
+空间复杂度:
+O(1)
+稳定性: 稳定
+*/
+void InsertSort(int array[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		int key = array[i];
+		int j;
+		for (j = i - 1; j >= 0 && array[j] > key; j--)
+		{
+			array[j + 1] = array[j];
+		}
+		array[j + 1] = key;
+	}
+}
+/*
+4.快速排序
+每一层的 Partition
+时间复杂度是 O(n)
+空间复杂度是 O(1)
+数多少个 O(n)，二叉树高度个 O(n)
+空间消耗在于递归调用的栈帧消耗，最终消耗的情况是二叉树的高度
+二叉树的高度是 log(n) - n 在变化
+最好						平均					最坏
+时间复杂度		O(n * log(n))				O(n * log(n))			O(n^2)
+空间复杂度		O(log(n))					O(log(n))				O(n)
+
+稳定性: 不稳定
+*/
+int partition(int array[], int right, int left)
+{
+	int d = left;
+	for (int i = left; i < right;i++)
+	{
+		if (array[i] < array[right])
+		{
+			Swap(array, i, d);
+			d++;
+		}
+	}
+	Swap(array, d, right);
+	return d;
+}
+void QuickSortInner(int array[], int left, int right)
+{
+	if (left == right)
+	{
+		return;
+	}
+	if (left > right)
+	{
+		return;
+	}
+	//1.确认基准值，选最后面，pivot = array[right]为基准值
+	//2.遍历区间，进行切割，直到小的左，大的右，并且返回最终基准值所在的下标
+	int d = partition(array, left, right);
+	QuickSortInner(array, left, d - 1);
+	QuickSortInner(array, d + 1, right);
+}
+void QuickSort(int array[], int n)
+{
+	QuickSortInner(array, 0, n - 1);
+}
+//5.
+void GetMemory(char *p)
+{
+	p = (char *)malloc(100);
+	
+}
+
+long long FindMaxK(long long n)
+{
+	
+	//可将表达式转换为函数，以求函数最大值
+	long long k = 0;
+	long long tmp = 0;
+	while (tmp <= n)
+	{
+		tmp = k * (k + 1);
+		if (tmp <= ((n / 3) - 3))
+			k++;
+		else
+		{
+			break;
+		}
+	}
+	return k;
+}
+
+
+
+
+
+
+
+void putv(char *pstr)
+{
+	cout << pstr << endl;
+	cout << *pstr << endl;
+}
+
+
 int main()
 {
+	struct A
+	{
+		//char a;
+		//short h;
+		//int c;
+		int a; //4
+		short b; //2
+		int c; //4
+		char d; //1
+	};
+	struct B
+	{
+		//char a;
+		//int b;
+		//long long c;
+		//char d;
+		int a; //4
+		short b; //2 
+		char c;  //1
+		int d; //4
+	};
+	union C
+	{
+		int c;
+		char a;
+	};
+	struct A s1 = {
+		1,
+		2,
+		3,
+		'a',
+	};
+	struct B s2 = {
+		1,
+		2,
+		'a',
+		3,
+	};
+	cout << sizeof(A) << sizeof(B) << endl;
+	cout << s1.a << s1.b << s1.c << s1.d << endl;
+	cout << &s1.a << " " << &s1.b << " " << &s1.c << " " << &s1.d << endl;
+	cout << s2.a << s2.b << s2.c << s2.d << endl;
+	cout << &s2.a << " " << &s2.b << " " << &s2.c << " " << &s2.d;
+	//char szInput[256] = "123456\0";
+	//char ch[] = { 'a','b','c' };
+	//printf("Enter a sentence: ");
+	////gets(szInput);
+	//printf("The sentence entered is %u characters long.\n", (unsigned)strlen(szInput));
+	//printf("The sentence entered is %u characters long.\n", sizeof(szInput));
+
+
+
+
+	//char ch[] = "abc";
+	//cout << sizeof(ch) << " " << ch[0] << endl;
+	//cout << strlen(ch) << " " << ch[0] << endl;
+	//char chh[] = "ab\0c";
+	//cout << sizeof(chh) << " " << chh[2] << endl;
+	//cout << strlen(chh) << " " << chh[0] << endl;
+	//char *chhh = "abc";
+	//cout << sizeof(chhh) << " " << chhh << endl;
+	//cout << strlen(chhh) << " " << chhh << endl;
+	//char *c = "ab\0c";
+	//cout << sizeof(c) << " " << c << endl;
+	//cout << strlen(c) << " " << c << endl;
+	//putv(c);
+	//int array[] = {4,5,6};
+	//
+	//cout <<sizeof(array) / sizeof(int);
+	//vector<int> v(array, array + sizeof(array) / sizeof(int));
+	//for (auto e : v)
+	//{
+	//	cout << e;
+	//}
+
+
+
+
+	//int X;//输入数据的总行数
+	//int Y;//你拥有的物品编号
+	//int Z;//想要兑换的物品编号
+	//vector<vector<int>> vv;//a , b, c 用物品a可兑换物品b，需要支付c
+	//vector<int> r;
+	//int Min_Pay;
+	//map<int, vector<int>> map;
+	//for (int i = 0; i < X; i++)
+	//{
+	//	if (vv[i][0] == Y && vv[i][1] == Z)
+	//	{
+	//		r.push_back(vv[i][0]);
+	//		r.push_back(vv[i][1]);
+	//		map.insert(make_pair(vv[i][2], r));
+	//	}
+	//	r.erase;
+	//}
+	//auto e = map.begin;
+	//Min_Pay = e.first;
+	//r = e.second;
+	//for (int i = 0; i < X; i++)
+	//{
+	//	int pay1 = 0;
+	//	if (vv[X][0] == Y && vv[X][1] == Z)
+	//	{
+	//		pay1 = vv[X][2];
+	//		r.push_back(vv[X][0]);
+	//		r.push_back(vv[X][1]);
+	//	}
+	//	int pay2 = 0;
+	//	for (int j = ; i < ; i++)
+	//	{
+
+	//	}
+	//}
+
+
+
 	//int a = 1, b = 2, c = 2;
 	//int i = 0;
 	//while (a<b<c) 
@@ -1103,8 +1415,14 @@ int main()
 	//	i++;
 	//}
 	//printf("%d,%d,%d", a, b, i);
-	char c[5] = { 'a', 'b','\0','c','\o' };
-	printf("%s", c);
+	//char c[5] = { 'a', 'b','\0','c','\o' };
+	//printf("%s", c);
+	//int x, y;
+	//if (x < y)
+	//{
+	//	x++;
+	//	y++;
+	//}
 
 	//char a[20] = "hello world";
 	//cout << sizeof(a) << endl;
