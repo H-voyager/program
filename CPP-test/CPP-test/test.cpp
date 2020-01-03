@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+ï»¿#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include<typeinfo>
 #include <string>
@@ -15,6 +15,11 @@
 #include "map.h"
 #include "set.h"
 #include <unordered_map>
+#include <ctime>
+#include <windows.h>
+#include "winnt.h"
+
+#define INPUT 10000
 
 //struct fun1
 //{
@@ -69,7 +74,7 @@
 //	int _month;
 //	int _day;
 //};
-//// ÒÔÏÂ²âÊÔº¯ÊıÄÜÍ¨¹ı±àÒëÂğ£¿
+//// ä»¥ä¸‹æµ‹è¯•å‡½æ•°èƒ½é€šè¿‡ç¼–è¯‘å—ï¼Ÿ
 //void Test()
 //{
 //	Date d1(1944,20,6);
@@ -93,11 +98,11 @@
 //class Date
 //{
 //private:
-//	// »ù±¾ÀàĞÍ(ÄÚÖÃÀàĞÍ)
+//	// åŸºæœ¬ç±»å‹(å†…ç½®ç±»å‹)
 //	int _year;
 //	int _month;
 //	int _day;
-//	// ×Ô¶¨ÒåÀàĞÍ
+//	// è‡ªå®šä¹‰ç±»å‹
 //	Time _t;
 //};
 
@@ -127,10 +132,10 @@
 //class Solution {
 //public:
 	/**
-	*  ÆæÊıÎ»ÉÏ¶¼ÊÇÆæÊı»òÕßÅ¼ÊıÎ»ÉÏ¶¼ÊÇÅ¼Êı
-	*  ÊäÈë£ºÊı×éarr£¬³¤¶È´óÓÚ2
-	*  len£ºarrµÄ³¤¶È
-	*  ½«arrµ÷Õû³ÉÆæÊıÎ»ÉÏ¶¼ÊÇÆæÊı»òÕßÅ¼ÊıÎ»ÉÏ¶¼ÊÇÅ¼Êı
+	*  å¥‡æ•°ä½ä¸Šéƒ½æ˜¯å¥‡æ•°æˆ–è€…å¶æ•°ä½ä¸Šéƒ½æ˜¯å¶æ•°
+	*  è¾“å…¥ï¼šæ•°ç»„arrï¼Œé•¿åº¦å¤§äº2
+	*  lenï¼šarrçš„é•¿åº¦
+	*  å°†arrè°ƒæ•´æˆå¥‡æ•°ä½ä¸Šéƒ½æ˜¯å¥‡æ•°æˆ–è€…å¶æ•°ä½ä¸Šéƒ½æ˜¯å¶æ•°
 	*/
 //	void oddInOddEvenInEven(vector<int>& arr, int len) 
 //	{
@@ -162,7 +167,7 @@
 //	}
 //
 //	void PrintVector(const vector<int>& v) 
-//	{    // const¶ÔÏóÊ¹ÓÃconstµü´úÆ÷½øĞĞ±éÀú´òÓ¡
+//	{    // constå¯¹è±¡ä½¿ç”¨constè¿­ä»£å™¨è¿›è¡Œéå†æ‰“å°
 //		vector<int>::const_iterator it = v.begin();
 //		while (it != v.end())
 //		{
@@ -234,7 +239,7 @@
 //private:
 //	int _a;
 //};
-//// ÀàÖĞ½öÓĞ³ÉÔ±º¯Êı
+//// ç±»ä¸­ä»…æœ‰æˆå‘˜å‡½æ•°
 //class A2 {
 //public:
 //	void f2() {}
@@ -244,7 +249,7 @@
 //	int _a;
 //	char _c;
 //};
-//// ÀàÖĞÊ²Ã´¶¼Ã»ÓĞ---¿ÕÀà
+//// ç±»ä¸­ä»€ä¹ˆéƒ½æ²¡æœ‰---ç©ºç±»
 //class A3
 //{};
 //
@@ -302,7 +307,7 @@
 //	auto it = l.begin();
 //	while (it != l.end())
 //	{
-//		// erase()º¯ÊıÖ´ĞĞºó£¬itËùÖ¸ÏòµÄ½ÚµãÒÑ±»É¾³ı£¬Òò´ËitÎŞĞ§£¬ÔÚÏÂÒ»´ÎÊ¹ÓÃitÊ±£¬±ØĞëÏÈ¸øÆä¸³Öµ
+//		// erase()å‡½æ•°æ‰§è¡Œåï¼Œitæ‰€æŒ‡å‘çš„èŠ‚ç‚¹å·²è¢«åˆ é™¤ï¼Œå› æ­¤itæ— æ•ˆï¼Œåœ¨ä¸‹ä¸€æ¬¡ä½¿ç”¨itæ—¶ï¼Œå¿…é¡»å…ˆç»™å…¶èµ‹å€¼
 //		l.erase(it);
 //		++it;
 //	}	
@@ -311,7 +316,7 @@
 //		cout << *it << "\n" << endl;
 //	}
 //}
-//// ¸ÄÕı
+//// æ”¹æ­£
 //void TestListIterator()
 //{
 //	int array[] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
@@ -330,7 +335,7 @@
 
 //// size/clear/resize
 //void TestString1()
-//{	// È¡³öurlÖĞµÄÓòÃû
+//{	// å–å‡ºurlä¸­çš„åŸŸå
 	//string url("http://www.cplusplus.com/reference/string/string/");
 	//cout << url << endl;
 	//size_t start = url.find("://");
@@ -343,12 +348,12 @@
 	//size_t finish = url.find('/', start);
 	//string address = url.substr(start, finish - start);
 	//cout << address << endl;
-	//// É¾³ıurlµÄĞ­ÒéÇ°×º
+	//// åˆ é™¤urlçš„åè®®å‰ç¼€
 	//size_t pos = url.find("://");
 	//url.erase(0, pos + 3);
 	//cout << url << endl;
 /////////////////////////////////////////////////
-	////»ñÈ¡fileºó×º
+	////è·å–fileåç¼€
 	//string file{ "string.cpp" };
 	//size_t pos = file.rfind('.');
 	////string suffix(file.substr(pos, file.size() - pos));
@@ -356,7 +361,7 @@
 	//suffix.append(file.begin() + pos, file.end());
 	//cout << suffix << endl;
 	//cout << address << endl;
-	//// É¾³ıurlµÄĞ­ÒéÇ°×º
+	//// åˆ é™¤urlçš„åè®®å‰ç¼€
 	//pos = url.find("://");
 	//url.erase(0, pos + 3);
 	//cout << url << endl;
@@ -365,16 +370,16 @@
 	//std::string str2 = "Witing ";
 	//std::string str3 = "Please ";
 
-	//str.append(str2);//×·¼Óstr2
-	//str.append(str3, 2, 3);//×·¼Óstr3 2-3-4×Ö·û
-	//str.append("Something", 4);//×·¼ÓÇ°4¸ö×Ö·û
-	//str.append("here: ");//×·¼Ó""ÖĞ×Ö·û
-	//str.append(10u, '.');//×·¼Ó10¸ö'.'
-	//str.append(str3.begin() + 2, str3.end());//×·¼Óstr3µÚ2¸ö×Ö·û¿ªÊ¼µ½½áÎ²
+	//str.append(str2);//è¿½åŠ str2
+	//str.append(str3, 2, 3);//è¿½åŠ str3 2-3-4å­—ç¬¦
+	//str.append("Something", 4);//è¿½åŠ å‰4ä¸ªå­—ç¬¦
+	//str.append("here: ");//è¿½åŠ ""ä¸­å­—ç¬¦
+	//str.append(10u, '.');//è¿½åŠ 10ä¸ª'.'
+	//str.append(str3.begin() + 2, str3.end());//è¿½åŠ str3ç¬¬2ä¸ªå­—ç¬¦å¼€å§‹åˆ°ç»“å°¾
 
 	//cout << str.c_str();
 //////////////////////////////////////
-//string µÄ3ÖÖ±éÀú·½Ê½ for+operator[]  µü´úÆ÷  ·¶Î§for
+//string çš„3ç§éå†æ–¹å¼ for+operator[]  è¿­ä»£å™¨  èŒƒå›´for
 	//string s("hello world");
 	//for (int i = 0; i < s.size(); i++)
 	//{
@@ -382,7 +387,7 @@
 	//}
 	//cout << "\n" << endl;
 
-	////stringµÄ·´Ïòµü´ú
+	////stringçš„åå‘è¿­ä»£
 	//string::reverse_iterator it = s.rbegin();
 	//while (it != s.rend())
 	//{
@@ -403,42 +408,42 @@
 	s1[0] = 'H';
 	cout << s1 << endl;*/
 /////////////////////////////////////////////////
-//	// ×¢Òâ£ºstringÀà¶ÔÏóÖ§³ÖÖ±½ÓÓÃcinºÍcout½øĞĞÊäÈëºÍÊä³ö
+//	// æ³¨æ„ï¼šstringç±»å¯¹è±¡æ”¯æŒç›´æ¥ç”¨cinå’Œcoutè¿›è¡Œè¾“å…¥å’Œè¾“å‡º
 //	string s("hello world!!!");
 //	cout << s.size() << endl;
 //	cout << s.length() << endl;
 //	cout << s.capacity() << endl;
 //	cout << s << endl;
 //	cout << "= == == == == == == == == " << endl;
-//	// ½«sÖĞµÄ×Ö·û´®Çå¿Õ£¬×¢ÒâÇå¿ÕÊ±Ö»ÊÇ½«sizeÇå0£¬²»¸Ä±äµ×²ã¿Õ¼äµÄ´óĞ¡
+//	// å°†sä¸­çš„å­—ç¬¦ä¸²æ¸…ç©ºï¼Œæ³¨æ„æ¸…ç©ºæ—¶åªæ˜¯å°†sizeæ¸…0ï¼Œä¸æ”¹å˜åº•å±‚ç©ºé—´çš„å¤§å°
 //	s.clear();
 //	cout << s.size() << endl;
 //	cout << s.capacity() << endl;
 //	cout << "= == == == == == == == == " << endl;
-//	// ½«sÖĞÓĞĞ§×Ö·û¸öÊıÔö¸Ä±äµ½10¸ö£¬¶à³öÎ»ÖÃÓÃ'a'½øĞĞÌî³ä
-//	// ¡°aaaaaaaaaa¡±
+//	// å°†sä¸­æœ‰æ•ˆå­—ç¬¦ä¸ªæ•°å¢æ”¹å˜åˆ°10ä¸ªï¼Œå¤šå‡ºä½ç½®ç”¨'a'è¿›è¡Œå¡«å……
+//	// â€œaaaaaaaaaaâ€
 //	s.resize(10, 'a');
 //	cout << s.size() << endl;
 //	cout << s.capacity() << endl;
 //	cout << "= == == == == == == == == " << endl;
-//	// ½«sÖĞÓĞĞ§×Ö·û¸öÊıÔö¼Óµ½20¸ö£¬¶à³öÎ»ÖÃÓÃÈ±Ê¡Öµ'\0'½øĞĞÌî³ä
+//	// å°†sä¸­æœ‰æ•ˆå­—ç¬¦ä¸ªæ•°å¢åŠ åˆ°20ä¸ªï¼Œå¤šå‡ºä½ç½®ç”¨ç¼ºçœå€¼'\0'è¿›è¡Œå¡«å……
 //	// "aaaaaaaaaa\0\0\0\0\0"
 //	s.resize(20);
 //	cout << s.size() << endl;
 //	cout << s.capacity() << endl;
 //	cout << s << endl;
 //	cout << "= == == == == == == == == " << endl;
-//	// ½«sÖĞÓĞĞ§×Ö·û¸öÊıËõĞ¡µ½5¸ö
+//	// å°†sä¸­æœ‰æ•ˆå­—ç¬¦ä¸ªæ•°ç¼©å°åˆ°5ä¸ª
 //	s.resize(5);
 //	cout << s.size() << endl;
 //	cout << s.capacity() << endl;
 //	cout << s << endl;
 //	cout << "= == == == == == == == == " << endl;
-//	// reserve²»»á»á¸Ä±ästringÖĞÓĞĞ§ÔªËØ¸öÊı
+//	// reserveä¸ä¼šä¼šæ”¹å˜stringä¸­æœ‰æ•ˆå…ƒç´ ä¸ªæ•°
 //	s.reserve(50);
 //	cout << s.size() << endl;
 //	cout << s.capacity() << endl;
-//	// µ±reserve²ÎÊıĞ¡ÓÚstringµÄµ×²ã¿Õ¼ä´óĞ¡Ê±£¬²»»á½«¿Õ¼äËõĞ¡
+//	// å½“reserveå‚æ•°å°äºstringçš„åº•å±‚ç©ºé—´å¤§å°æ—¶ï¼Œä¸ä¼šå°†ç©ºé—´ç¼©å°
 //	s.reserve(40);
 //	cout << s.size() << endl;
 //	cout << s.capacity() << endl;
@@ -648,9 +653,9 @@ public:
 	}
 };
 
-//ÊäÈëÁ½¸öÕûÊıĞòÁĞ£¬µÚÒ»¸öĞòÁĞ±íÊ¾Õ»µÄÑ¹ÈëË³Ğò£¬ÇëÅĞ¶ÏµÚ¶ş¸öĞòÁĞÊÇ·ñ¿ÉÄÜÎª¸ÃÕ»µÄµ¯³öË³Ğò
-//¼ÙÉèÑ¹ÈëÕ»µÄËùÓĞÊı×Ö¾ù²»ÏàµÈ¡£ÀıÈçĞòÁĞ1,2,3,4,5ÊÇÄ³Õ»µÄÑ¹ÈëË³Ğò£¬ĞòÁĞ4,5,3,2,1ÊÇ¸ÃÑ¹Õ»
-//ĞòÁĞ¶ÔÓ¦µÄÒ»¸öµ¯³öĞòÁĞ£¬µ«4,3,5,1,2¾Í²»¿ÉÄÜÊÇ¸ÃÑ¹Õ»ĞòÁĞµÄµ¯³öĞòÁĞ¡££¨×¢Òâ£ºÕâÁ½¸öĞòÁĞµÄ³¤¶ÈÊÇÏàµÈµÄ£©
+//è¾“å…¥ä¸¤ä¸ªæ•´æ•°åºåˆ—ï¼Œç¬¬ä¸€ä¸ªåºåˆ—è¡¨ç¤ºæ ˆçš„å‹å…¥é¡ºåºï¼Œè¯·åˆ¤æ–­ç¬¬äºŒä¸ªåºåˆ—æ˜¯å¦å¯èƒ½ä¸ºè¯¥æ ˆçš„å¼¹å‡ºé¡ºåº
+//å‡è®¾å‹å…¥æ ˆçš„æ‰€æœ‰æ•°å­—å‡ä¸ç›¸ç­‰ã€‚ä¾‹å¦‚åºåˆ—1,2,3,4,5æ˜¯æŸæ ˆçš„å‹å…¥é¡ºåºï¼Œåºåˆ—4,5,3,2,1æ˜¯è¯¥å‹æ ˆ
+//åºåˆ—å¯¹åº”çš„ä¸€ä¸ªå¼¹å‡ºåºåˆ—ï¼Œä½†4,3,5,1,2å°±ä¸å¯èƒ½æ˜¯è¯¥å‹æ ˆåºåˆ—çš„å¼¹å‡ºåºåˆ—ã€‚ï¼ˆæ³¨æ„ï¼šè¿™ä¸¤ä¸ªåºåˆ—çš„é•¿åº¦æ˜¯ç›¸ç­‰çš„ï¼‰
 class SolutionE {
 public:
 	bool IsPopOrder(vector<int> pushV, vector<int> popV) {
@@ -757,7 +762,7 @@ public:
 	}
 };
 
-int compare1(string str1, string str2)//×Ô¶¨ÒåµÄ±È½Ï´óĞ¡µÄº¯Êı£¬str1 "Ğ¡"µÄ»°£¬·µ»Øtrue
+int compare1(string str1, string str2)//è‡ªå®šä¹‰çš„æ¯”è¾ƒå¤§å°çš„å‡½æ•°ï¼Œstr1 "å°"çš„è¯ï¼Œè¿”å›true
 {	//if(str1>=str2) then str1+str2 >=str2+str1
 	string tmp1 = str1.append(str2);
 	string tmp2 = str2.append(str1);
@@ -769,7 +774,7 @@ int compare1(string str1, string str2)//×Ô¶¨ÒåµÄ±È½Ï´óĞ¡µÄº¯Êı£¬str1 "Ğ¡"µÄ»°£¬·
 
 
 class SolutionG {
-public://±ğÈËµÄ´úÂë¾ÍÊÇ¾«¼ò£¬²ÑÀ¢°¡£¬¼ÌĞøÑ§Ï°¡£
+public://åˆ«äººçš„ä»£ç å°±æ˜¯ç²¾ç®€ï¼Œæƒ­æ„§å•Šï¼Œç»§ç»­å­¦ä¹ ã€‚
 	int GetUglyNumber_Solution(int index) {
 		if (index < 7)return index;
 		vector<int> res(index);
@@ -800,9 +805,9 @@ public:
 		long long left = InversePairsCore(copy, data, start, start + length);
 		long long right = InversePairsCore(copy, data, start + length + 1, end);
 
-		//i³õÊ¼»¯ÎªÇ°°ë¶Î×îºóÒ»¸öÊı×ÖµÄÏÂ±ê
+		//iåˆå§‹åŒ–ä¸ºå‰åŠæ®µæœ€åä¸€ä¸ªæ•°å­—çš„ä¸‹æ ‡
 		int i = start + length;
-		//j³õÊ¼»¯Îªºó°ë¶Î×îºóÒ»¸öÊı×ÖµÄÏÂ±ê
+		//jåˆå§‹åŒ–ä¸ºååŠæ®µæœ€åä¸€ä¸ªæ•°å­—çš„ä¸‹æ ‡
 		int j = end;
 		int indexCopy = end;
 		long long count = 0;
@@ -1033,19 +1038,19 @@ public:
 		vector<int> res;
 		deque<int> s;
 		for (unsigned int i = 0; i<num.size(); ++i){
-			while (s.size() && num[s.back()] <= num[i])//´ÓºóÃæÒÀ´Îµ¯³ö¶ÓÁĞÖĞ±Èµ±Ç°numÖµĞ¡µÄÔªËØ£¬Í¬Ê±Ò²ÄÜ±£Ö¤¶ÓÁĞÊ×ÔªËØÎªµ±Ç°´°¿Ú×î´óÖµÏÂ±ê
+			while (s.size() && num[s.back()] <= num[i])//ä»åé¢ä¾æ¬¡å¼¹å‡ºé˜Ÿåˆ—ä¸­æ¯”å½“å‰numå€¼å°çš„å…ƒç´ ï¼ŒåŒæ—¶ä¹Ÿèƒ½ä¿è¯é˜Ÿåˆ—é¦–å…ƒç´ ä¸ºå½“å‰çª—å£æœ€å¤§å€¼ä¸‹æ ‡
 				s.pop_back();
-			while (s.size() && i - s.front() + 1>size)//µ±µ±Ç°´°¿ÚÒÆ³ö¶ÓÊ×ÔªËØËùÔÚµÄÎ»ÖÃ£¬¼´¶ÓÊ×ÔªËØ×ø±ê¶ÔÓ¦µÄnum²»ÔÚ´°¿ÚÖĞ£¬ĞèÒªµ¯³ö
+			while (s.size() && i - s.front() + 1>size)//å½“å½“å‰çª—å£ç§»å‡ºé˜Ÿé¦–å…ƒç´ æ‰€åœ¨çš„ä½ç½®ï¼Œå³é˜Ÿé¦–å…ƒç´ åæ ‡å¯¹åº”çš„numä¸åœ¨çª—å£ä¸­ï¼Œéœ€è¦å¼¹å‡º
 				s.pop_front();
-			s.push_back(i);//°ÑÃ¿´Î»¬¶¯µÄnumÏÂ±ê¼ÓÈë¶ÓÁĞ
-			if (size&&i + 1 >= size)//µ±»¬¶¯´°¿ÚÊ×µØÖ·i´óÓÚµÈÓÚsizeÊ±²Å¿ªÊ¼Ğ´Èë´°¿Ú×î´óÖµ
+			s.push_back(i);//æŠŠæ¯æ¬¡æ»‘åŠ¨çš„numä¸‹æ ‡åŠ å…¥é˜Ÿåˆ—
+			if (size&&i + 1 >= size)//å½“æ»‘åŠ¨çª—å£é¦–åœ°å€iå¤§äºç­‰äºsizeæ—¶æ‰å¼€å§‹å†™å…¥çª—å£æœ€å¤§å€¼
 				res.push_back(num[s.front()]);
 		}
 		return res;
 	}
 };
 
-//¾ØÕóÖĞµÄ×î¶ÌÂ·¾¶
+//çŸ©é˜µä¸­çš„æœ€çŸ­è·¯å¾„
 class SolutionHS {
 public:
 	bool hasPath(char* matrix, int rows, int cols, char* str)
@@ -1096,8 +1101,8 @@ void Swap(int array[], int i, int j) {
 	array[j] = t;
 }
 
-//1.Ã°ÅİÅÅĞò
-//Ê±¼ä¸´ÔÓ¶È £º ×îºÃO£¨n£©£¬Æ½¾ùO£¨n^2£©,×î»µO£¨n^2£©¿Õ¼ä¸´ÔÓ¶È: O(1) ÎÈ¶¨ĞÔ: ÎÈ¶¨
+//1.å†’æ³¡æ’åº
+//æ—¶é—´å¤æ‚åº¦ ï¼š æœ€å¥½Oï¼ˆnï¼‰ï¼Œå¹³å‡Oï¼ˆn^2ï¼‰,æœ€åOï¼ˆn^2ï¼‰ç©ºé—´å¤æ‚åº¦: O(1) ç¨³å®šæ€§: ç¨³å®š
 void BubbleSor(int array[],int  size)
 {
 	for (int i = 0; i < size; i++)
@@ -1119,20 +1124,20 @@ void BubbleSor(int array[],int  size)
 		}
 	}
 }
-//2.Ñ¡ÔñÅÅĞò
-// 1. Ö±½ÓÑ¡Ôñ
+//2.é€‰æ‹©æ’åº
+// 1. ç›´æ¥é€‰æ‹©
 /*
-Ê±¼ä¸´ÔÓ¶È:	Êı¾İ²»Ãô¸Ğ		O(n^2)
-¿Õ¼ä¸´ÔÓ¶È: O(1)
-ÎÈ¶¨ĞÔ: ²»ÎÈ¶¨
+æ—¶é—´å¤æ‚åº¦:	æ•°æ®ä¸æ•æ„Ÿ		O(n^2)
+ç©ºé—´å¤æ‚åº¦: O(1)
+ç¨³å®šæ€§: ä¸ç¨³å®š
 */
 void selectsort(int array[], int n)
 {
 	for (int i = 0; i < n; i++)
 	{
 		int maxIdx = 0;
-		//ÓĞĞòÇø¼ä[n - i, size - 1]
-		//ÎŞĞòÇø¼ä[0,n - 1 - i]
+		//æœ‰åºåŒºé—´[n - i, size - 1]
+		//æ— åºåŒºé—´[0,n - 1 - i]
 		for (int j = 0; j <= n - i - 1; j++)
 		{
 			if (array[j] >= array [maxIdx])
@@ -1140,8 +1145,8 @@ void selectsort(int array[], int n)
 				maxIdx = j;
 			}
 		}
-		// maxIdx ¼ÇÂ¼×ÅÎŞĞòÇø¼ä²¿·Ö×î´óµÄÊıµÄÏÂ±ê
-		// ºÍÎŞĞòÇø¼äµÄ×îºóÒ»¸öÎ»ÖÃµÄÊı½øĞĞ½»»»
+		// maxIdx è®°å½•ç€æ— åºåŒºé—´éƒ¨åˆ†æœ€å¤§çš„æ•°çš„ä¸‹æ ‡
+		// å’Œæ— åºåŒºé—´çš„æœ€åä¸€ä¸ªä½ç½®çš„æ•°è¿›è¡Œäº¤æ¢
 		Swap(array, maxIdx, n - 1 - i);
 	}
 }
@@ -1167,7 +1172,7 @@ void selectSortop(int array[], int n)
 		Swap(array, min, begin);
 		if (max == begin)
 		{
-			max == min;
+			max = min;
 		}
 		Swap(array, max, end);
 
@@ -1176,15 +1181,15 @@ void selectSortop(int array[], int n)
 	}
 }
 
-//3.²åÈëÅÅĞò
+//3.æ’å…¥æ’åº
 /*
-Ê±¼ä¸´ÔÓ¶È:
-×îºÃ		O(n£©			ÓĞĞò
-Æ½¾ù		O(n^2)
-×î»µ		O(n^2)			ÄæĞò
-¿Õ¼ä¸´ÔÓ¶È:
+æ—¶é—´å¤æ‚åº¦:
+æœ€å¥½		O(nï¼‰			æœ‰åº
+å¹³å‡		O(n^2)
+æœ€å		O(n^2)			é€†åº
+ç©ºé—´å¤æ‚åº¦:
 O(1)
-ÎÈ¶¨ĞÔ: ÎÈ¶¨
+ç¨³å®šæ€§: ç¨³å®š
 */
 void InsertSort(int array[], int n)
 {
@@ -1200,18 +1205,18 @@ void InsertSort(int array[], int n)
 	}
 }
 /*
-4.¿ìËÙÅÅĞò
-Ã¿Ò»²ãµÄ Partition
-Ê±¼ä¸´ÔÓ¶ÈÊÇ O(n)
-¿Õ¼ä¸´ÔÓ¶ÈÊÇ O(1)
-Êı¶àÉÙ¸ö O(n)£¬¶ş²æÊ÷¸ß¶È¸ö O(n)
-¿Õ¼äÏûºÄÔÚÓÚµİ¹éµ÷ÓÃµÄÕ»Ö¡ÏûºÄ£¬×îÖÕÏûºÄµÄÇé¿öÊÇ¶ş²æÊ÷µÄ¸ß¶È
-¶ş²æÊ÷µÄ¸ß¶ÈÊÇ log(n) - n ÔÚ±ä»¯
-×îºÃ						Æ½¾ù					×î»µ
-Ê±¼ä¸´ÔÓ¶È		O(n * log(n))				O(n * log(n))			O(n^2)
-¿Õ¼ä¸´ÔÓ¶È		O(log(n))					O(log(n))				O(n)
+4.å¿«é€Ÿæ’åº
+æ¯ä¸€å±‚çš„ Partition
+æ—¶é—´å¤æ‚åº¦æ˜¯ O(n)
+ç©ºé—´å¤æ‚åº¦æ˜¯ O(1)
+æ•°å¤šå°‘ä¸ª O(n)ï¼ŒäºŒå‰æ ‘é«˜åº¦ä¸ª O(n)
+ç©ºé—´æ¶ˆè€—åœ¨äºé€’å½’è°ƒç”¨çš„æ ˆå¸§æ¶ˆè€—ï¼Œæœ€ç»ˆæ¶ˆè€—çš„æƒ…å†µæ˜¯äºŒå‰æ ‘çš„é«˜åº¦
+äºŒå‰æ ‘çš„é«˜åº¦æ˜¯ log(n) - n åœ¨å˜åŒ–
+æœ€å¥½						å¹³å‡					æœ€å
+æ—¶é—´å¤æ‚åº¦		O(n * log(n))				O(n * log(n))			O(n^2)
+ç©ºé—´å¤æ‚åº¦		O(log(n))					O(log(n))				O(n)
 
-ÎÈ¶¨ĞÔ: ²»ÎÈ¶¨
+ç¨³å®šæ€§: ä¸ç¨³å®š
 */
 int partition(int array[], int right, int left)
 {
@@ -1237,8 +1242,8 @@ void QuickSortInner(int array[], int left, int right)
 	{
 		return;
 	}
-	//1.È·ÈÏ»ù×¼Öµ£¬Ñ¡×îºóÃæ£¬pivot = array[right]Îª»ù×¼Öµ
-	//2.±éÀúÇø¼ä£¬½øĞĞÇĞ¸î£¬Ö±µ½Ğ¡µÄ×ó£¬´óµÄÓÒ£¬²¢ÇÒ·µ»Ø×îÖÕ»ù×¼ÖµËùÔÚµÄÏÂ±ê
+	//1.ç¡®è®¤åŸºå‡†å€¼ï¼Œé€‰æœ€åé¢ï¼Œpivot = array[right]ä¸ºåŸºå‡†å€¼
+	//2.éå†åŒºé—´ï¼Œè¿›è¡Œåˆ‡å‰²ï¼Œç›´åˆ°å°çš„å·¦ï¼Œå¤§çš„å³ï¼Œå¹¶ä¸”è¿”å›æœ€ç»ˆåŸºå‡†å€¼æ‰€åœ¨çš„ä¸‹æ ‡
 	int d = partition(array, left, right);
 	QuickSortInner(array, left, d - 1);
 	QuickSortInner(array, d + 1, right);
@@ -1247,7 +1252,7 @@ void QuickSort(int array[], int n)
 {
 	QuickSortInner(array, 0, n - 1);
 }
-//5.
+
 void GetMemory(char *p)
 {
 	p = (char *)malloc(100);
@@ -1257,7 +1262,7 @@ void GetMemory(char *p)
 long long FindMaxK(long long n)
 {
 	
-	//¿É½«±í´ïÊ½×ª»»Îªº¯Êı£¬ÒÔÇóº¯Êı×î´óÖµ
+	//å¯å°†è¡¨è¾¾å¼è½¬æ¢ä¸ºå‡½æ•°ï¼Œä»¥æ±‚å‡½æ•°æœ€å¤§å€¼
 	long long k = 0;
 	long long tmp = 0;
 	while (tmp <= n)
@@ -1274,63 +1279,262 @@ long long FindMaxK(long long n)
 }
 
 
-
-
-
-
-
 void putv(char *pstr)
 {
 	cout << pstr << endl;
 	cout << *pstr << endl;
 }
+class String
+{
+public:
+	String(const char* str = "")
+	{
+		// æ„é€ stringç±»å¯¹è±¡æ—¶ï¼Œå¦‚æœä¼ é€’nullptræŒ‡é’ˆï¼Œè®¤ä¸ºç¨‹åºéæ³•ï¼Œæ­¤å¤„æ–­è¨€ä¸‹
+		if (nullptr == str)
+		{
+			assert(false);
+			return;
+		}
+		_str = new char[strlen(str) + 1];
+		strcpy(_str, str);
+	}
+	String(const String& s)
+		: _str(new char[strlen(s._str) + 1])
+	{
+		strcpy(_str, s._str);
+	}
+	String& operator=(const String& s)
+	{
+		if (this != &s)
+		{
+			char* pStr = new char[strlen(s._str) + 1];
+			strcpy(pStr, s._str);
+			delete[] _str;
+			_str = pStr;
+		}
+		return *this;
+	}
+	~String()
+	{
+		if (_str)
+		{
+			delete[] _str;
+			_str = nullptr;
+		}
+	}
+private:
+	char* _str;
+};
+
+
+
+//è®¡ç®—åœ†å‘¨ç‡
+
+
+//void mult(int *a, int b, int *s)
+//{
+//	for (int i = INPUT, c = 0; i >= 0; i--)
+//	{
+//		int y = a[i] * b + c;
+//		c = y / 10;
+//		s[i] = y % 10;
+//	}
+//}
+//
+//void divi(int *a, int b, int *s)
+//{
+//	for (int i = 0, c = 0; i <= INPUT; i++)
+//	{
+//		int y = a[i] + c * 10;
+//		c = y%b;
+//		s[i] = y / b;
+//	}
+//}
+//
+//void incr(int *a, int *b, int *s)
+//{
+//	for (int i = INPUT, c = 0; i >= 0; i--)
+//	{
+//		int y = a[i] + b[i] + c;
+//		c = y / 10;
+//		s[i] = y % 10;
+//	}
+//}
+//
+//bool eqs(int *a, int *b)
+//{
+//	int i = 0;
+//	while (a[i] == b[i] && i <= INPUT)
+//		i++;
+//	return i>INPUT;
+//}
+//
+//void print(int *pi)
+//{
+//	printf("%1d./n", *pi);
+//	for (int i = 1; i <= INPUT; i++)
+//	{
+//		printf("%d", pi[i]);
+//		if (i % 10 == 0)
+//			printf(" ");
+//		if (i % 70 == 0)
+//			printf("/n");
+//	}
+//}
+//
+//void testlppp()
+//{
+//	int lpi[INPUT + 1], lls[INPUT + 1], lsl[INPUT + 1], lp[INPUT + 1];
+//	int *pi = lpi, *ls = lls, *sl = lsl, *p = lp;
+//	int i;
+//	memset(pi, 0, sizeof(lpi));
+//	memset(ls, 0, sizeof(lls));
+//	memset(sl, 0, sizeof(lsl));
+//	memset(p, 0, sizeof(lp));
+//	*pi = *ls = *sl = 1;
+//	for (i = 1; i<INPUT; i++)
+//	{
+//		mult(ls, i, sl);
+//		divi(sl, 2 * i + 1, ls);
+//		incr(pi, ls, p);
+//		int *t;
+//		t = p;
+//		p = pi;
+//		pi = t;
+//		print(pi);
+//	}
+//	mult(p, 2, pi);
+//	print(pi);
+//	printf("/n/nSUCCESS!/n");
+//}
 
 
 int main()
-{
-	struct A
-	{
-		//char a;
-		//short h;
-		//int c;
-		int a; //4
-		short b; //2
-		int c; //4
-		char d; //1
-	};
-	struct B
-	{
-		//char a;
-		//int b;
-		//long long c;
-		//char d;
-		int a; //4
-		short b; //2 
-		char c;  //1
-		int d; //4
-	};
-	union C
-	{
-		int c;
-		char a;
-	};
-	struct A s1 = {
-		1,
-		2,
-		3,
-		'a',
-	};
-	struct B s2 = {
-		1,
-		2,
-		'a',
-		3,
-	};
-	cout << sizeof(A) << sizeof(B) << endl;
-	cout << s1.a << s1.b << s1.c << s1.d << endl;
-	cout << &s1.a << " " << &s1.b << " " << &s1.c << " " << &s1.d << endl;
-	cout << s2.a << s2.b << s2.c << s2.d << endl;
-	cout << &s2.a << " " << &s2.b << " " << &s2.c << " " << &s2.d;
+{ 
+	//åœ¨æˆ‘çš„ç†è§£ä¸­è½¯ä»¶çš„å¼€å‘æµç¨‹åªè¦åˆ†ä¸ºä»¥ä¸‹å‡ ä¸ªæ­¥éª¤
+
+	//é¦–å…ˆæ˜¯éœ€æ±‚çš„ç¡®è®¤ã€‚ç¡®è®¤è½¯ä»¶éœ€è¦å®Œæˆçš„åŠŸèƒ½ï¼Œè¿™äº›åŠŸèƒ½çš„å¯æ‰§è¡Œæ€§å’Œå¼€å‘ç¯å¢ƒï¼Œå¼€å‘è¯­è¨€ï¼Œå¹³å°çš„ç¡®è®¤
+	
+	//ç„¶åæ˜¯ç¨‹åºæ¶æ„çš„æ­å»ºï¼Œè¿™ä¸€éƒ¨åˆ†ä¸»è¦ç”±æ¶æ„å¸ˆç­‰å®Œæˆæ•´ä¸ªè½¯ä»¶ç³»ç»Ÿ çš„æ¡†æ¶ï¼ŒåŠŸèƒ½ï¼Œæ¥å£ï¼Œæ¨¡å—ä¹‹é—´çš„ç›¸äº’è”ç³»ç­‰çš„è®¾è®¡ã€‚
+	
+	//å…¶æ¬¡å°±æ˜¯æ¥å£ï¼Œå†…åœ¨åŠŸèƒ½ï¼Œæ¨¡å—çš„å…·ä½“å®ç°ï¼Œè¿™ä¸€éƒ¨åˆ†ä¹Ÿæ˜¯æ•´ä¸ªè½¯ä»¶è®¾è®¡å·¥ç¨‹ä¸­çš„ä¸€ä¸ªä»»åŠ¡é‡æ¯”è¾ƒå¤§çš„éƒ¨åˆ†ã€‚
+	
+	//ä¹‹åå°±æ˜¯æµ‹è¯•ç¯èŠ‚ï¼Œåœ¨ç»è¿‡å¼€å‘äººå‘˜çš„bugç®€å•è°ƒè¯•è‡ªæµ‹ä¹‹åï¼Œåœ¨å…¬å¸çš„ç”Ÿäº§å®é™…ä¸­åº”è¯¥è¦è¿›è¡Œå¤§é‡çš„ç³»ç»ŸåŒ–çš„ä¸“ä¸šæµ‹è¯•ã€‚\
+		è¿™ä¸€éƒ¨åˆ†åº”è¯¥æ˜¯ç”±ä¸“ä¸šçš„æµ‹å¼€äººå‘˜å®Œæˆï¼Œä¹‹ååœ¨å†å¼€å‘äººå‘˜çš„æ²Ÿé€šã€‚
+	
+	//æœ€ç»ˆå°±æ˜¯è½¯ä»¶çš„éƒ¨ç½²ï¼Œè¿›è¡Œç”Ÿäº§å®é™…çš„åº”ç”¨å’Œç»´æŠ¤ã€‚
+	//ä»¥ä¸Šå°±æ˜¯æˆ‘æ‰€ç†è§£çš„ä¸€ä¸ªå…¬å¸å®Œæˆè½¯ä»¶äº§å“çš„å¤§è‡´æµç¨‹ã€‚
+
+	//ä»»æ„ä½æ•°çš„PIå€¼è®¡ç®—ï¼Œæ­¤å¤„è®¾ç½®3000ä½ï¼Œè¿™ä¸ªå¯ä»¥ä½¿ç”¨å®è¿›è¡Œæ›¿æ¢
+	//Ï€/2=1+1/3+1/3*2/5+1/3*2/5*3/7...+1*2*3...n/3*5...*(2n+1) \
+		= 1 + 1 / 3(1 + 2 / 5(1 +... + (n - 1) / (2n - 1)(1 + n / (2n + 1))...);
+	//è¿˜å¯ä»¥ä½¿ç”¨æŠ•é’ˆæ³•è¿›è¡Œè®¡ç®—
+	float s;
+	int  x, b, n, c, i, j, d, l, a[3000];
+	while (1){
+		cout << "è¯·è¾“å…¥ä½æ•°:";
+		cin >> x;//è¾“å…¥
+		//ç´¯åŠ ç¡®å®šé¡¹æ•°.
+		for (s = 0, n = 1; n <= 3000; n++){
+			s = s + log10((2 * n + 1) / n);
+			if (s > x + 1)
+				break;
+		}
+		//æŒ‰å…¬å¼è®¡ç®—
+		for (c = 1, j = n; j >= 1; j--)	{
+			d = 2 * j + 1;
+			//æŒ‰ä½é™¤2j+1
+			for (i = 0; i <= x + 4; i++){
+				a[i] = c / d;
+				c = (c%d) * 10 + a[i + 1];
+			}
+
+			a[x + 5] = c / d;
+			// æŒ‰ä½ä¹˜j
+			for (b = 0, i = x + 5; i >= 0; i--){
+				a[i] = a[i] * j + b;
+				b = a[i] / 10;
+				a[i] = a[i] % 10;
+			}
+			a[0] = a[0] + 1;
+			c = a[0];//æ•´æ•°åŠ 1.
+		}
+		
+		//ä¾æ®å…¬å¼å„ä½ä¹˜2
+		for (b = 0, i = x + 5; i >= 0; i--){
+			a[i] = a[i] * 2 + b;
+			b = a[i] / 10;
+			a[i] = a[i] % 10;
+		}
+		//æŒ‰ä½è¾“å‡ºç»“æœ
+		cout << endl << "PI=" << a[0] << '.';
+		for (l = 10, i = 1; i <= x; i++){
+			cout << a[i];
+			l++;
+			//è¾“å‡ºç»“æœæ¯éš”10ä½ç©ºæ ¼
+			if (l % 10 == 0)
+				cout << " ";
+		}
+		cout << endl;
+	}
+	//float x, y;
+	//float m, n;
+	//for ( y=2; y>=-2; y-=U )
+	//{
+	//	for ( x=-1.2; x<=1.2; x+=V)
+	//	{
+	//		if ( ( ( (x*x + y*y - 1)*(x*x + y*y - 1)*(x*x + y*y - 1) - x*x*y*y*y ) <= 0 ) )
+	//			printf("*");
+	//		else printf(" ");
+	//	} 
+	//	printf("\n");
+	//} 
+	//getchar();
+
+
+	//struct A
+	//{
+	//	//char a;
+	//	//short h;
+	//	//int c;
+	//	int a; //4
+	//	short b; //2
+	//	int c; //4
+	//	char d; //1
+	//};
+	//struct B
+	//{
+	//	//char a;
+	//	//int b;
+	//	//long long c;
+	//	//char d;
+	//	int a; //4
+	//	short b; //2 
+	//	char c;  //1
+	//	int d; //4
+	//};
+	//union C
+	//{
+	//	int c;
+	//	char a;
+	//};
+	//struct A s1 = {
+	//	1,
+	//	2,
+	//	3,
+	//	'a',
+	//};
+	//struct B s2 = {
+	//	1,
+	//	2,
+	//	'a',
+	//	3,
+	//};
+	//cout << sizeof(A) << sizeof(B) << endl;
+	//cout << s1.a << s1.b << s1.c << s1.d << endl;
+	//cout << &s1.a << " " << &s1.b << " " << &s1.c << " " << &s1.d << endl;
+	//cout << s2.a << s2.b << s2.c << s2.d << endl;
+	//cout << &s2.a << " " << &s2.b << " " << &s2.c << " " << &s2.d;
 	//char szInput[256] = "123456\0";
 	//char ch[] = { 'a','b','c' };
 	//printf("Enter a sentence: ");
@@ -1345,7 +1549,7 @@ int main()
 	//cout << sizeof(ch) << " " << ch[0] << endl;
 	//cout << strlen(ch) << " " << ch[0] << endl;
 	//char chh[] = "ab\0c";
-	//cout << sizeof(chh) << " " << chh[2] << endl;
+	//cout << sizeof(chh) << " " << chh[1] << endl;
 	//cout << strlen(chh) << " " << chh[0] << endl;
 	//char *chhh = "abc";
 	//cout << sizeof(chhh) << " " << chhh << endl;
@@ -1353,6 +1557,11 @@ int main()
 	//char *c = "ab\0c";
 	//cout << sizeof(c) << " " << c << endl;
 	//cout << strlen(c) << " " << c << endl;
+	//char *cc = "fhregfrengoierhgir";
+	//cout << "cc = " << sizeof(cc);
+
+
+
 	//putv(c);
 	//int array[] = {4,5,6};
 	//
@@ -1366,10 +1575,10 @@ int main()
 
 
 
-	//int X;//ÊäÈëÊı¾İµÄ×ÜĞĞÊı
-	//int Y;//ÄãÓµÓĞµÄÎïÆ·±àºÅ
-	//int Z;//ÏëÒª¶Ò»»µÄÎïÆ·±àºÅ
-	//vector<vector<int>> vv;//a , b, c ÓÃÎïÆ·a¿É¶Ò»»ÎïÆ·b£¬ĞèÒªÖ§¸¶c
+	//int X;//è¾“å…¥æ•°æ®çš„æ€»è¡Œæ•°
+	//int Y;//ä½ æ‹¥æœ‰çš„ç‰©å“ç¼–å·
+	//int Z;//æƒ³è¦å…‘æ¢çš„ç‰©å“ç¼–å·
+	//vector<vector<int>> vv;//a , b, c ç”¨ç‰©å“aå¯å…‘æ¢ç‰©å“bï¼Œéœ€è¦æ”¯ä»˜c
 	//vector<int> r;
 	//int Min_Pay;
 	//map<int, vector<int>> map;
@@ -1454,7 +1663,7 @@ int main()
 
 	//auto_ptr< string> p1(new string("hello world"));
 	//auto_ptr<string> p2;
-	//p2 = p1; //auto_ptr²»»á±¨´í.
+	//p2 = p1; //auto_pträ¸ä¼šæŠ¥é”™.
 	////cout << *p1;
 	//cout << *p2;
 
@@ -1492,7 +1701,7 @@ int main()
 	//int  a[2][3] = { { 1, 2, 3 }, { 4, 5, 6 } }, (*p)[3], *q[3];
 	//p = a;
 	////cout << *p[0]<<*p[0] + 1<<*p[1]<<*p[3];
-	////q = a;//²»¿É¸³Öµ
+	////q = a;//ä¸å¯èµ‹å€¼
 	//p = &a[1];
 	//q[0] = &a[0][0];//1
 	//q[1] = &a[0][2];//3
@@ -1502,7 +1711,7 @@ int main()
 	//cout << *q[1];
 	//cout << *q[2];
 	//cout << *q[3];
-	////q = &a[1];//²»¿É¸³Öµ
+	////q = &a[1];//ä¸å¯èµ‹å€¼
 
 
 	//int number[] = { 2, 1, 3, 1, 4 };
@@ -1556,20 +1765,20 @@ int main()
 
 
 
-	////È¡×îĞ¡Êı×éÅÅÁĞÊı
+	////å–æœ€å°æ•°ç»„æ’åˆ—æ•°
 	//int num[] = { 332, 41, 322, 32, 414, 4 };
 	//int len = sizeof(num) / sizeof(int);
 	//cout << "len = " << len << endl;
 	//string *word = new string[len];
 	//stringstream sst;
-	//for (int i = 0; i<len; i++)//½²intÕûÊı×ª»¯³É×Ö·û´®
+	//for (int i = 0; i<len; i++)//è®²intæ•´æ•°è½¬åŒ–æˆå­—ç¬¦ä¸²
 	//{
 	//	sst << num[i];
 	//	sst >> word[i];
 	//	sst.clear();
 	//}
 	//cout << endl;
-	//sort(word, word + len, compare1);//ÀûÓÃ·ºĞÍËã·¨ÅÅĞò
+	//sort(word, word + len, compare1);//åˆ©ç”¨æ³›å‹ç®—æ³•æ’åº
 	//for (int i = 0; i<len; i++)
 	//{
 	//	cout << word[i];
@@ -1667,7 +1876,7 @@ int main()
 		double a;
 		};
 		cout << sizeof(sw) << endl*/;
-	//Ò»´ÎÉêÇë4GÄÚ´æ
+	//ä¸€æ¬¡ç”³è¯·4Gå†…å­˜
 	//void* p = new char[0xfffffffful];
 	//cout << "new:" << p << endl;
 
@@ -1715,8 +1924,8 @@ int main()
 
 	//auto_ptr<Date> ap(new Date);
 	//auto_ptr<Date> copy(ap);
-	//// auto_ptrµÄÎÊÌâ£ºµ±¶ÔÏó¿½±´»òÕß¸³Öµºó£¬Ç°ÃæµÄ¶ÔÏó¾ÍĞü¿ÕÁË
-	//// C++98ÖĞÉè¼ÆµÄauto_ptrÎÊÌâÊÇ·Ç³£Ã÷ÏÔµÄ£¬ËùÒÔÊµ¼ÊÖĞºÜ¶à¹«Ë¾Ã÷È·¹æ¶¨ÁË²»ÄÜÊ¹ÓÃauto_ptr
+	//// auto_ptrçš„é—®é¢˜ï¼šå½“å¯¹è±¡æ‹·è´æˆ–è€…èµ‹å€¼åï¼Œå‰é¢çš„å¯¹è±¡å°±æ‚¬ç©ºäº†
+	//// C++98ä¸­è®¾è®¡çš„auto_ptré—®é¢˜æ˜¯éå¸¸æ˜æ˜¾çš„ï¼Œæ‰€ä»¥å®é™…ä¸­å¾ˆå¤šå…¬å¸æ˜ç¡®è§„å®šäº†ä¸èƒ½ä½¿ç”¨auto_ptr
 	//ap->_year = 2018;
 
 
@@ -1742,7 +1951,7 @@ int main()
 
 	//char str[80];
 
-	//sprintf(str, "Pi µÄÖµ = %d", 123456);
+	//sprintf(str, "Pi çš„å€¼ = %d", 123456);
 	//puts(str);
 	//TestListIterator();
 

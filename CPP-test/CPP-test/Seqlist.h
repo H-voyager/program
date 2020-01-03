@@ -4,7 +4,6 @@
 
 using namespace std;
 
-#define N 100
 typedef int SLDataType;
 
 // Ë³Ðò±íµÄ¶¯Ì¬´æ´¢
